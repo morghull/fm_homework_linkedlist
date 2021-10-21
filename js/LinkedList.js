@@ -51,10 +51,16 @@ class LinkedList {
     }
     return ++this.length;
   }
-  pop(){
+  pop() {
+    if (this.length === 0) return undefined;
     const tail = this.tail;
-    tail.prev.next = null;
-    this.tail = tail.prev;
+    if (this.length === 1) {
+      this.tail = null;
+      this.head = null;
+    } else {
+      tail.prev.next = null;
+      this.tail = tail.prev;
+    }
     this.length--;
     return tail;
   }
