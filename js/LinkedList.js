@@ -52,7 +52,7 @@ class LinkedList {
     return ++this.length;
   }
   pop() {
-    if (this.length === 0) return undefined;
+    if (this.length <= 0) return;
     const tail = this.tail;
     if (this.length === 1) {
       this.tail = null;
